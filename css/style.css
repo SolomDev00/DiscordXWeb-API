@@ -1,0 +1,102 @@
+body {
+  font-family: "Poppins";
+  color: #001060;
+}
+
+@font-face {
+  font-family: basic;
+  src: url("../assets/fonts/Quicksand-VariableFont_wght.ttf");
+}
+
+.u-section-1 {
+  background-image: url("../assets/images/background.jpg");
+  background-position: 50% 50%;
+  min-height: 100vh;
+}
+
+.u-section-1 .u-shape-1 {
+  background-image: none;
+  opacity: 0.6;
+}
+
+.u-section-1 .u-shape-2 {
+  width: 645px;
+  height: 284px;
+  margin: 211px auto 0;
+}
+
+.contact_section {
+  padding-top: 190px;
+}
+
+.contact_section .contact_heading {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.contact_section .contact_heading h2 {
+  font-weight: bold;
+  font-family: basic;
+} 
+
+.contact_section .contact_heading P {
+  font-weight: bold;
+  font-family: basic;
+}
+
+.contact_section form .form-control {
+  border: none;
+  background-color: #f2f3f4;
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-radius: 15px;
+  height: 50px;
+}
+
+.contact_section form .form-control#inputMessage {
+  height: 120px;
+}
+
+.contact_section form select.form-control {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  position: relative;
+  background-image: url("../assets/images/down-arrow.png");
+  background-repeat: no-repeat;
+  background-position: 98%;
+}
+
+.contact_section button {
+  display: inline-block;
+  padding: 12px 40px;
+  background-color: #3640BB;
+  color: #f9fcfb;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 2px 7px 0px rgba(32, 50, 117, 0.26);
+  box-shadow: 0px 2px 7px 0px rgba(32, 50, 117, 0.26);
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  border: none;
+  text-transform: uppercase;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  outline: none;
+  margin-top: 1px;
+  font-size: 15px;
+  font-family: basic;
+}
+
+.contact_section button:hover {
+  -webkit-transform: translateY(-7px);
+          transform: translateY(-7px);
+}
+
+.alert {
+  text-align: center;
+  color: #C3073F;
+}
+.alert2 {
+  text-align: center;
+}

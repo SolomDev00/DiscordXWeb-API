@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8"/> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+  <!-- Site Metas -->
+  <meta name="keywords" content=""/>
+  <meta name="description" content=""/>
+  <meta name="author" content=""/>
+  <title>Discord API</title>
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css"/>
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+  <link rel="stylesheet" type="text/css" href="nicepage.css"/>
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Dosis:400,500|Poppins:400,700&amp;display=swap" rel="stylesheet"/>
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet"/>
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet"/>
+</head>
+
+<body>
+  <section class="u-clearfix u-image u-section-1" id="home" data-image-width="1600" data-image-height="800">
+    <div class="u-absolute-hcenter u-custom-color-4 u-expanded u-hidden-xs u-shape u-shape-rectangle u-shape-1"></div>
+    <section class="contact_section layout_padding">
+    <div class="container contact_heading">
+      <h2>
+        Discord API
+      </h2>
+      <p>
+        API to connect the discord to your site with ease!
+      </p>
+    </div>
+    <div class="container">
+      <form>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="fname">ID</label>
+            <input type="text" class="form-control" id="fname" placeholder="#0"/>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="lname">Name</label>
+            <input type="tel" class="form-control" id="lname" placeholder="Eslam Wael"/>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="ttype">Email</label>
+            <input type="email" class="form-control" id="ttype" placeholder="ew11solom@gmail.com"/>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputstate">Select Service</label>
+            <select id="inputstate" class="form-control">
+              <option>...</option>
+              <option value="Website">Website</option>
+              <option value="Lua Script">Lua Script</option>
+              <option value="Ui/Ux Desgin">Ui/Ux Desgin</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="issue">Message</label>
+          <input type="text" class="form-control" id="issue" style="height: 115px;" placeholder="Message!"/>
+        </div>
+    </div>
+    <div class="contect">
+      <p id="notice" class="alert"></p>
+      <p id="notice2" class="alert2"></p>
+      <div class="d-flex justify-content-center">
+        <button onclick="sendMessage()" type="submit" class="" style="font-family: basic;">Send</button>
+      </div>
+</div>
+    </form>   
+  </section>
+  </section>
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+
+  <script>
+        function sendMessage() {
+          var request = new XMLHttpRequest();
+          var fname = document.getElementById("fname").value;
+          var lname = document.getElementById("lname").value;
+          var ttype = document.getElementById("ttype").value;
+          var issue = document.getElementById("issue").value;
+          var inputstate = document.getElementById("inputstate").value;
+  
+          if (fname !== "" && lname !== "" && issue !== "") {
+            document.getElementById("fname").value = "#";
+            document.getElementById("lname").value = "";
+            document.getElementById("ttype").value = "";
+            document.getElementById("issue").value = "";
+            document.getElementById("inputstate").value = "";
+  
+            request.open(
+              "POST",
+              "https://discord.com/api/webhooks/1037342058190479460/Jlzi8yBMDOWm-lK_SXem8xzlYLaivkHEi0XOYS27OQcunxctoopYh_RskYmQC-GIUgp-"
+            );
+  
+            request.setRequestHeader("Content-type", "application/json");
+  
+            var params = {
+              // username: "Website Tickets ",
+              content:
+                "> **New Message!** <:njma:962802788667097098>" +
+
+                "\n `-`** ID: **" +
+                name +
+                "\n** `-` User: **" +
+                number +
+                "**\n `-` Email: **" +
+                addreas +
+                "**\n `-` Service: **" +
+                answer +
+                "**\n `-` Message: **"
+            };
+  
+            request.send(JSON.stringify(params));
+        document.getElementById("notice2").innerHTML =
+                      "Thank you for evaluating/reporting good luck.";
+                      document.getElementById("notice").value = "";
+            event.preventDefault();
+          } else {
+            event.preventDefault();
+        document.getElementById("notice").innerHTML =
+                      "All fields must be filled in to send the message!";//change this to whatever you want to use
+          }
+        }
+  </script>
+  </body>
+</html>
